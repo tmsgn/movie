@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: scroll;
+}
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+nav::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: white; 
+    z-index: -1;
+    bottom: 0;
+}
+
+nav ul{
+    width: 100%;
+    position: absolute;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding-left: 50px; 
+}
+nav ul li:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;  
+}
+nav ul li {
+   padding: 15px 10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100%;
+}
+nav ul li:first-child{
+    margin-left: 0px;
+    position: absolute;
+    left: 0;
+    padding-left: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+main {
+    position: relative;
+    z-index: -1;
+    top: 50px;
+}
+
+main .imgslider{
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+main .imgslider img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    object-fit: fill;
+}
+main .slidedetail{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    left: 0;
+    z-index: 1000;
+}
+main .slidedetail h1{
+    font-size: 200%;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
