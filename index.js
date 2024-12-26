@@ -199,10 +199,19 @@ async function getLatestMovies() {
             const watchlater=document.createElement('span');
             watchlater.innerHTML = '<span class="material-symbols-outlined">bookmark</span>';
             
-              watchlater.addEventListener('click', (event) => {
-                event.stopPropagation(); 
-                addWatchlist(img.src, name.textContent);
-            });
+            const msgs=document.querySelector('.added');
+            watchlater.addEventListener('click', (event) => {
+              msg=document.createElement('p');
+              msg.textContent="Added to watchlist";
+              event.stopPropagation(); 
+              addWatchlist(img.src, name.textContent);
+              msg.style.transform="translateX(0)";
+              msgs.appendChild(msg);
+
+              setTimeout(() => {
+                  msg.style.transform="translateX(200%)";
+              }, 3000);
+          });
             moviediv.appendChild(img);
             moviediv.appendChild(name);
             moviediv.appendChild(year);
@@ -277,12 +286,19 @@ async function getTrendingTvShows() {
 
             const watchlater=document.createElement('span');
             watchlater.innerHTML = '<span class="material-symbols-outlined">bookmark</span>';
-            const msg=document.querySelector('.added');
-              watchlater.addEventListener('click', (event) => {
-                event.stopPropagation(); 
-                addWatchlist(img.src, name.textContent);
-                msg.style.transform="translateX(0)";
-            });
+            const msgs=document.querySelector('.added');
+            watchlater.addEventListener('click', (event) => {
+              msg=document.createElement('p');
+              msg.textContent="Added to watchlist";
+              event.stopPropagation(); 
+              addWatchlist(img.src, name.textContent);
+              msg.style.transform="translateX(0)";
+              msgs.appendChild(msg);
+
+              setTimeout(() => {
+                  msg.style.transform="translateX(200%)";
+              }, 3000);
+          });
 
              watchlater.style.display="none";
             tvdiv.addEventListener("mouseover", () => {
