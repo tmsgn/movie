@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="inputdiv">
+        <input type="text" name="query" class="input" placeholder="Search for movies...">
+        <button type="submit" class="search"><span class="material-symbols-outlined">search</span></button>
+    </div>     
+    </nav>
+        <ul id="suggestion"></ul>
+    <aside>
+        <ul>
+            <li><span class="material-symbols-outlined">home</span> Home</li>
+            <li><span class="material-symbols-outlined">movie</span> Movies</li>
+            <li><span class="material-symbols-outlined">tv</span> TV-Shows</li>
+            <li><span class="material-symbols-outlined">trending_up</span> Trending</li>
+            <li><span class="material-symbols-outlined">history</span> History</li>
+            <li><span class="material-symbols-outlined">bookmark</span> Watchlist</li>
+        </ul>
+    </aside>
+    <iframe id="videoFrame" src="" frameborder="0"></iframe>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const videoSrc = getQueryParam('src');
+        if (videoSrc) {
+            document.getElementById('videoFrame').src = videoSrc;
+        }
+    </script>
+</body>
+</html>
