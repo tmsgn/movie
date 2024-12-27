@@ -581,14 +581,14 @@ function setWatchList() {
 const wishlist=document.querySelector('.wishlist');
 wishlist.addEventListener("click", () => {
     if (watchlistdiv.style.transform === 'translateX(0px)') {
-        watchlistdiv.style.transform = 'translateX(-200%)';
+        watchlistdiv.style.transform = 'translateX(-230%)';
     } else {
         watchlistdiv.style.transform = 'translateX(0)';
     }
 });
 window.addEventListener('click', (e) => {
     if (e.target !== wishlist && !watchlistdiv.contains(e.target)) {
-        watchlistdiv.style.transform = 'translateX(-200%)';
+        watchlistdiv.style.transform = 'translateX(-230%)';
     }
 });
 const aside=document.querySelector('aside');
